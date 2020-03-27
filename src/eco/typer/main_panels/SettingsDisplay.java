@@ -249,6 +249,10 @@ public class SettingsDisplay extends CPanel
 			{
 				lineBreakTime.setText("Line Break Time");
 				CustomFrame.updateDisplay(new ExecutionTimeAndDelayTimeEditor(1));	//1 = Line Break Time (Formally: Spam Interval)
+			} else if(lineBreakTime.getSelectedItem().toString().equals("Random Delay Time"))
+			{
+				lineBreakTime.setText("Line Break Time");
+				CustomFrame.updateDisplay(new ExecutionTimeAndDelayTimeEditor(3));	//3 = Random Break Time
 			}
 		});
 		add(lineBreakTime);

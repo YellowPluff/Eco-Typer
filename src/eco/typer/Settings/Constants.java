@@ -78,7 +78,8 @@ public class Constants
 													"2 Second(s)",
 													"4 Second(s)",
 													"7 Second(s)",
-													"Custom Delay Time"};
+													"Custom Delay Time",
+													"Random Delay Time"};
 	public static String[] EXEC_TIME_OPTIONS = {"1 Minute(s)",
 													"15 Minute(s)",
 													"30 Minute(s)",
