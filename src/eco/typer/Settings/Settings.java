@@ -34,8 +34,8 @@ public class Settings
 	public static boolean speedUpBoot = false;				//For developing, make false for release
 	public static boolean displayBootScreen = true;			//Display loading screen
 	public static boolean printWebsiteData = false;			//Toggle for printing data read from website
-	public static boolean allowTyping = true;				//Toggle for allowing keyboard to type
-	public static boolean displayErrorsInConsole = false;	//Display errors in console rather than .txt to desktop
+	public static boolean allowTyping = false;				//Toggle for allowing keyboard to type
+	public static boolean displayErrorsInConsole = true;	//Display errors in console rather than .txt to desktop
 	
 	/**
 	 * FOR RELEASE, THE ABOVE 4 VALUES SHOULD BE

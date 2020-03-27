@@ -25,8 +25,10 @@ import eco.typer.listeners.SUL;
 public class ExecutionTimeAndDelayTimeEditor extends CPanel
 {
 	
-	//0 = Execution Time
-	//1 = Spam Interval
+	//0 = Execution Time (Custom Time)
+	//1 = Line Break Time (Custom Delay Time)
+	//2 = Wait button (SequenceTextDisplay.java)
+	//3 = Random Delay Time
 	public ExecutionTimeAndDelayTimeEditor(int i)
 	{
 		super("Time Controller");
@@ -43,7 +45,40 @@ public class ExecutionTimeAndDelayTimeEditor extends CPanel
 		else if(i == 2)
 		{
 			ShowSpamInterval(i);
+		} else if(i == 3)
+		{
+			ShowRandomLineBreakTime();
 		}
+	}
+	
+	private void ShowRandomLineBreakTime()
+	{
+		SpinnerCircularListModel minSecondsModel = new SpinnerCircularListModel(Constants.TIME_SECONDS);
+		JSpinner minWaitSpinner = new JSpinner(minSecondsModel);
+		minWaitSpinner.setBounds(10, 50, 200, 30);
+		setColors(minWaitSpinner);
+		add(minWaitSpinner);
+		
+		SpinnerCircularListModel maxSecondsModel = new SpinnerCircularListModel(Constants.TIME_SECONDS);
+		JSpinner maxWaitSpinner = new JSpinner(maxSecondsModel);
+		maxWaitSpinner.setBounds(10, 90, 200, 30);
+		setColors(maxWaitSpinner);
+		add(maxWaitSpinner);
+		
+		CButton setTime = new CButton("Set Delay");
+		setTime.setBounds(10, 120, 150, 20);
+		setTime.addMouseListener(new SUL("How long do you want to RANDOMLY wait between spams?"));
+		setTime.addActionListener(e ->
+		{
+			int minValue = Integer.parseInt(minWaitSpinner.getValue().toString().replace(" Second(s)", ""));
+			int maxValue = Integer.parseInt(maxWaitSpinner.getValue().toString().replace(" Second(s)", ""));
+			if(minValue <= maxValue)
+			{
+				CustomFrame.settingsPanel.lineBreakTime.setText(minWaitSpinner.getValue() + " - " + maxWaitSpinner.getValue());
+			}
+			CustomFrame.updateDisplay(CustomFrame.lastVisitedPanel);
+		});
+		add(setTime);
 	}
 
 	private void ShowSpamInterval(int i)

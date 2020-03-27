@@ -55,6 +55,8 @@ public class LocalTyperThread implements Runnable
 	//---
 	private int EXEC_TIME;
 	private int TEXT_DELAY_BETWEEN_LINES;
+	private int TEXT_DELAY_BETWEEN_LINES_RANDOM_MIN;
+	private int TEXT_DELAY_BETWEEN_LINES_RANDOM_MAX;
 	private int BEGINNING_DELAY;
 	private String SMART_TYPOS;
 	private int TYPO_MAX_CHANCE;
@@ -231,7 +233,14 @@ public class LocalTyperThread implements Runnable
 				{
 					this.bot.pressEnter();
 				}
-				sleep(this.TEXT_DELAY_BETWEEN_LINES);
+				if(this.TEXT_DELAY_BETWEEN_LINES == -1)
+				{
+					int timeToSleep = Utils.getRandomNumberBetweenInclusive(this.TEXT_DELAY_BETWEEN_LINES_RANDOM_MIN, this.TEXT_DELAY_BETWEEN_LINES_RANDOM_MAX);
+					sleep(timeToSleep);
+				} else
+				{
+					sleep(this.TEXT_DELAY_BETWEEN_LINES);
+				}
 			}
 			if(this.breakTyperThread) //Prevents this thread from multiplying
 			{
@@ -686,7 +695,16 @@ public class LocalTyperThread implements Runnable
 			this.TEXT_DELAY_BETWEEN_LINES = 7000;
 			break;
 		default:
-			this.TEXT_DELAY_BETWEEN_LINES = 1000 * Integer.parseInt(this.lineBreakTime.replace(" Second(s)", ""));
+			String timeDelay = this.lineBreakTime.replace(" Second(s)", "");
+			if(timeDelay.contains("-"))
+			{
+				this.TEXT_DELAY_BETWEEN_LINES = -1;
+				this.TEXT_DELAY_BETWEEN_LINES_RANDOM_MIN = 1000 * Integer.parseInt(timeDelay.substring(0, 2));
+				this.TEXT_DELAY_BETWEEN_LINES_RANDOM_MAX = 1000 * Integer.parseInt(timeDelay.substring(timeDelay.length() - 2, timeDelay.length()));
+			} else
+			{
+				this.TEXT_DELAY_BETWEEN_LINES = 1000 * Integer.parseInt(timeDelay);
+			}
 			break;
 
 		}
