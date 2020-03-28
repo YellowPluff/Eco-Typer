@@ -678,6 +678,11 @@ public class LocalTyperThread implements Runnable
 	{
 		switch(this.lineBreakTime)
 		{
+		case "Line Break Time":
+			this.TEXT_DELAY_BETWEEN_LINES = -1;
+			this.TEXT_DELAY_BETWEEN_LINES_RANDOM_MIN = 3500;
+			this.TEXT_DELAY_BETWEEN_LINES_RANDOM_MAX = 4500;
+			break;
 		case "0 Second(s)":
 			this.TEXT_DELAY_BETWEEN_LINES = 100;
 			break;
@@ -687,7 +692,6 @@ public class LocalTyperThread implements Runnable
 		case "2 Second(s)":
 			this.TEXT_DELAY_BETWEEN_LINES = 2000;
 			break;
-		case "Line Break Time":
 		case "4 Second(s)":
 			this.TEXT_DELAY_BETWEEN_LINES = 4000;
 			break;
