@@ -58,7 +58,7 @@ public class LocalTyperThread implements Runnable
 	private int TEXT_DELAY_BETWEEN_LINES_RANDOM_MIN;
 	private int TEXT_DELAY_BETWEEN_LINES_RANDOM_MAX;
 	private int BEGINNING_DELAY;
-	private String SMART_TYPOS;
+	private boolean SMART_TYPOS;
 	private int TYPO_MAX_CHANCE;
 	private String SCREENSHOT_1;
 	private int SCREENSHOT_2 = 0;
@@ -200,11 +200,12 @@ public class LocalTyperThread implements Runnable
 				{
 					if(running)
 					{
-						if(!this.SMART_TYPOS.equals("NULL")
+						//User wants a typo
+						if(this.TYPO_MAX_CHANCE != -1
 						   && Utils.getRandomNumberBetweenInclusive(0, 100) < this.TYPO_MAX_CHANCE
 						   && c != ' ')
 						{
-							if(this.SMART_TYPOS.equals("true"))
+							if(this.SMART_TYPOS == true)
 							{
 								if(Settings.allowTyping == true)
 								{
@@ -219,6 +220,7 @@ public class LocalTyperThread implements Runnable
 								}
 							}
 						}
+						//User does not want a typo
 						else
 						{
 							if(Settings.allowTyping == true)
@@ -719,31 +721,31 @@ public class LocalTyperThread implements Runnable
 		switch(this.typoChance)
 		{
 		case "Smart Typos: 1%":
-			this.SMART_TYPOS = "true";
+			this.SMART_TYPOS = true;
 			this.TYPO_MAX_CHANCE = 1;
 			break;
 		case "Smart Typos: 2%":
-			this.SMART_TYPOS = "true";
+			this.SMART_TYPOS = true;
 			this.TYPO_MAX_CHANCE = 2;
 			break;
 		case "Smart Typos: 3%":
-			this.SMART_TYPOS = "true";
+			this.SMART_TYPOS = true;
 			this.TYPO_MAX_CHANCE = 3;
 			break;
 		case "Random Typos: 1%":
-			this.SMART_TYPOS = "false";
+			this.SMART_TYPOS = false;
 			this.TYPO_MAX_CHANCE = 1;
 			break;
 		case "Random Typos: 2%":
-			this.SMART_TYPOS = "false";
+			this.SMART_TYPOS = false;
 			this.TYPO_MAX_CHANCE = 2;
 			break;
 		case "Random Typos: 3%":
-			this.SMART_TYPOS = "false";
+			this.SMART_TYPOS = false;
 			this.TYPO_MAX_CHANCE = 3;
 			break;
 		default:
-			this.SMART_TYPOS = "NULL";
+			this.SMART_TYPOS = false;
 			this.TYPO_MAX_CHANCE = -1;
 			break;
 		}
