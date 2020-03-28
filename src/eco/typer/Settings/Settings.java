@@ -57,6 +57,10 @@ public class Settings
 		
 		parseArgs(args);
 		
+		if(speedUpBoot || !displayBootScreen || printWebsiteData || !allowTyping || displayErrorsInConsole) {
+			System.err.println("RELEASE FLAGS ARE NOT SET CORRECTLY!!!");
+		}
+		
 		Constants.splashWindow = loadingCacheFrame();
 		//System.out.println(VERSION);
 		
