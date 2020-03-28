@@ -85,10 +85,10 @@ public class SequenceTextDisplay extends CPanel
 			String line;
 			while((line = reader.readLine()) != null)
 			{
-				spamLinesDisplay.append(line + ",");
+				spamLinesDisplay.append(line + "#");
 			}
 			spamLinesDisplay.setText(spamLinesDisplay.getText().substring(0, spamLinesDisplay.getText().length() - 1));
-			spamLinesDisplay.setText(spamLinesDisplay.getText().replaceAll(",", "\n"));
+			spamLinesDisplay.setText(spamLinesDisplay.getText().replaceAll("#", "\n"));
 			reader.close();
 		}
 		catch (Exception e1)
