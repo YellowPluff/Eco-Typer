@@ -10,7 +10,6 @@ import eco.typer.custom_objects.CTextField;
 import eco.typer.listeners.SUL;
 import eco.typer.pages.PageDisplay;
 import eco.typer.pages.PageSelector;
-import eco.typer.tools.Utils;
 
 /**
  * @author dakota
@@ -128,7 +127,7 @@ public class AddingTextPanel extends CPanel
 		textLine1 = new CTextField();
 		textLine1.setBounds(10, yValues[0], 310, 30);
 		//textLine1.setHorizontalAlignment(JLabel.CENTER);
-		Utils.setFont(textLine1, "Neon.ttf", 16);
+		//Utils.setFont(textLine1, "Neon.ttf", 16);
 		textLines[0] = textLine1;
 		add(textLine1);
 	}
@@ -149,7 +148,7 @@ public class AddingTextPanel extends CPanel
 		textLine2 = new CTextField();
 		textLine2.setBounds(10, yValues[1], 310, 30);
 		//textLine2.setHorizontalAlignment(JLabel.CENTER);
-		Utils.setFont(textLine2, "Neon.ttf", 16);
+		//Utils.setFont(textLine2, "Neon.ttf", 16);
 		textLines[1] = textLine2;
 		add(textLine2);
 	}
@@ -170,7 +169,7 @@ public class AddingTextPanel extends CPanel
 		textLine3 = new CTextField();
 		textLine3.setBounds(10, yValues[2], 310, 30);
 		//textLine3.setHorizontalAlignment(JLabel.CENTER);
-		Utils.setFont(textLine3, "Neon.ttf", 16);
+		//Utils.setFont(textLine3, "Neon.ttf", 16);
 		textLines[2] = textLine3;
 		add(textLine3);
 	}
@@ -191,7 +190,7 @@ public class AddingTextPanel extends CPanel
 		textLine4 = new CTextField();
 		textLine4.setBounds(10, yValues[3], 310, 30);
 		//textLine4.setHorizontalAlignment(JLabel.CENTER);
-		Utils.setFont(textLine4, "Neon.ttf", 16);
+		//Utils.setFont(textLine4, "Neon.ttf", 16);
 		textLines[3] = textLine4;
 		add(textLine4);
 	}
@@ -212,7 +211,7 @@ public class AddingTextPanel extends CPanel
 		textLine5 = new CTextField();
 		textLine5.setBounds(10, yValues[4], 310, 30);
 		//textLine5.setHorizontalAlignment(JLabel.CENTER);
-		Utils.setFont(textLine5, "Neon.ttf", 16);
+		//Utils.setFont(textLine5, "Neon.ttf", 16);
 		textLines[4] = textLine5;
 		add(textLine5);
 	}
@@ -233,7 +232,7 @@ public class AddingTextPanel extends CPanel
 		textLine6 = new CTextField();
 		textLine6.setBounds(10, yValues[5], 310, 30);
 		//textLine6.setHorizontalAlignment(JLabel.CENTER);
-		Utils.setFont(textLine6, "Neon.ttf", 16);
+		//Utils.setFont(textLine6, "Neon.ttf", 16);
 		textLines[5] = textLine6;
 		add(textLine6);
 	}

@@ -83,25 +83,37 @@ public class ExecutionTimeAndDelayTimeEditor extends CPanel
 
 	private void ShowSpamInterval(int i)
 	{
+		SpinnerCircularListModel minutesModel = new SpinnerCircularListModel(Constants.TIME_MINUTES_ZERO_SECOND);
+		JSpinner minutesSpinner = new JSpinner(minutesModel);
+		minutesSpinner.setBounds(10, 50, 200, 30);
+		setColors(minutesSpinner);
+		add(minutesSpinner);
 		
 		SpinnerCircularListModel secondsModel = new SpinnerCircularListModel(Constants.TIME_SECONDS);
 		JSpinner secondsSpinner = new JSpinner(secondsModel);
-		secondsSpinner.setBounds(10, 50, 200, 30);
+		secondsSpinner.setBounds(10, 90, 200, 30);
 		setColors(secondsSpinner);
 		add(secondsSpinner);
 		
 		CButton setDelay = new CButton("Set Delay");
-		setDelay.setBounds(10, 80, 150, 20);
+		setDelay.setBounds(10, 120, 150, 20);
 		setDelay.addMouseListener(new SUL("How long do you want to wait between spams?"));
 		setDelay.addActionListener(e ->
 		{
 			if(i == 1)
 			{
-				CustomFrame.settingsPanel.lineBreakTime.setText(secondsSpinner.getValue() + "");
+				CustomFrame.settingsPanel.lineBreakTime.setText(minutesSpinner.getValue() + " : " + secondsSpinner.getValue());
 			}
 			else if(i == 2)
 			{
-				CustomFrame.sequenceDisplay.spamLinesDisplay.append("\n" + "Wait: " + secondsSpinner.getValue() + "");
+				if(CustomFrame.sequenceDisplay.spamLinesDisplay.getText().equals(""))
+				{
+					CustomFrame.sequenceDisplay.spamLinesDisplay.setText("Wait: " + minutesSpinner.getValue() + " : " + secondsSpinner.getValue());
+				}
+				else
+				{
+					CustomFrame.sequenceDisplay.spamLinesDisplay.append("\n" + "Wait: " + minutesSpinner.getValue() + " : " + secondsSpinner.getValue());
+				}
 			}
 			CustomFrame.updateDisplay(CustomFrame.lastVisitedPanel);
 		});
