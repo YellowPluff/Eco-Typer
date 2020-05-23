@@ -209,7 +209,7 @@ public class SettingsDisplay extends CPanel
 		});
 		add(startButton);
 		
-		configurations = new CComboBox("Quick Settings", Constants.CONFIGURATIONS);
+		configurations = new CComboBox("Setting Profiles", Constants.CONFIGURATIONS);
 		configurations.addMouseListener(new SUL("Use this to quickly load settings."));
 		configurations.setBounds(410, 50, 190, 30);
 		configurations.addActionListener(e ->

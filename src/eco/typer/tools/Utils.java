@@ -156,9 +156,9 @@ public class Utils
 	
 	public static FrameProperities loadCache()
 	{
-		if(!Constants.CONFIGURATIONS.contains("---Edit Quick Settings---"))
+		if(!Constants.CONFIGURATIONS.contains("---Edit Profiles---"))
 		{
-			Constants.CONFIGURATIONS.add("---Edit Quick Settings---");
+			Constants.CONFIGURATIONS.add("---Edit Profiles---");
 		}
 		if(!Constants.SAVED_LOCAL_FILES.contains("---Edit Files---"))
 		{
