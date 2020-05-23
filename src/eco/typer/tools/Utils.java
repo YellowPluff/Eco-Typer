@@ -139,10 +139,12 @@ public class Utils
 			try
 			{
 				PrintWriter writer = new PrintWriter(desktopFile, "UTF-8");
+				writer.println("Please email this file to typer.eco@gmail.com\n");
+				writer.println(ReportSettings.getCurrentSettingsForReporting());
 				writer.println("Error Code: " + errorCode);
 				writer.println(sStackTrace);
 				writer.close();
-				JOptionPane.showMessageDialog(Settings.frame, "An error file has been generated on your desktop.\nPlease send it to the developer ASAP.", "Eco Typer Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(Settings.frame, "An error file has been generated on your desktop.\nPlease email it to typer.eco@gmail.com.", "Eco Typer Error", JOptionPane.ERROR_MESSAGE);
 				System.exit(0);
 			}
 			catch (Exception e1)
