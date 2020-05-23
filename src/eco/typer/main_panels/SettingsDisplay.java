@@ -34,6 +34,7 @@ import eco.typer.sub_panels.QuickSettingsEditor;
 import eco.typer.threads.LocalTyperThread;
 import eco.typer.threads.RemoteTyperThread;
 import eco.typer.threads.SequenceTyperThread;
+import eco.typer.tools.ReportSettings;
 import eco.typer.tools.Utils;
 
 /**
@@ -118,6 +119,8 @@ public class SettingsDisplay extends CPanel
 			String finishedAlarmSound = CustomFrame.settingsPanel.alarmSelect.getSelectedItem().toString();
 			boolean is24HourClockOn = CustomFrame.settingsPanel.twentyFourClock.isTicked();
 			//String watchClient = CustomFrame.settingsPanel.watchGameClient.getSelectedItem().toString();
+			
+			ReportSettings.setCurrentSettingsForReporting();
 			
 			if (CustomFrame.textMode == 0) //Local
 			{
