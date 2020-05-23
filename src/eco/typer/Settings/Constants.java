@@ -181,7 +181,9 @@ public class Constants
 											"Canon",
 											"Country",
 											"Hemeroidy",
-											"Popcorn"};
+											"Popcorn",
+											"Sea Shanty 2",
+											"RuneScape Theme"};
 	public static String[] MESSAGE_ORDERS = {"Messages will be sent top to bottom",
 												"Messages will be sent bottom to top",
 												"Messages will be sent in a random order"};
