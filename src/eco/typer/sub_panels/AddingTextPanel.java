@@ -10,7 +10,6 @@ import eco.typer.custom_objects.CTextField;
 import eco.typer.listeners.SUL;
 import eco.typer.pages.PageDisplay;
 import eco.typer.pages.PageSelector;
-import eco.typer.tools.Utils;
 
 /**
  * @author dakota

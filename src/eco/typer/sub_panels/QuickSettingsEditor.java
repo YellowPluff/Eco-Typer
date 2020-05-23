@@ -186,7 +186,7 @@ public class QuickSettingsEditor extends CPanel
 		saveConfig.addMouseListener(new SUL("Allows you to save this configuration and load it in later."));
 		saveConfig.addActionListener(e ->
 		{
-			String configNameInput = JOptionPane.showInputDialog(Settings.frame, "What would you like to name your configuration?");
+			String configNameInput = JOptionPane.showInputDialog(Settings.frame, "What would you like to name your profile?");
 			if(configNameInput != null && !configNameInput.equals(""))
 			{
 				File fileName = new File(Constants.HOST_FILES_DIRECTORY + "/" + configNameInput + ".cfg");

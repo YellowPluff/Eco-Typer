@@ -160,12 +160,21 @@ public class SequenceTyperThread implements Runnable
 				{
 					spamLineCounter = 0;
 				}
-				
+				//TODO THIS LOGIC WILL NEED TO CHANGE TO ADOPT MINUTES AND SECONDS WAIT
 				if(line.substring(0, 5).equals("Wait:"))
 				{
-					String waitTime_Str = line.replaceAll("[^0-9]", "");
-					int waitTime = Integer.parseInt(waitTime_Str) * 1000;
-					sleep(waitTime);
+					String waitTime = line.replace(" Minute(s)", "").replace(" Second(s)", "").replace("Wait: ", "");
+					int minutesPart = Integer.parseInt(waitTime.substring(0, 2));
+					int secondsPart = Integer.parseInt(waitTime.substring(waitTime.length() - 2, waitTime.length()));
+					int totalSeconds = (60 * minutesPart) + secondsPart;
+					int waitTimeMilliseconds = 1000 * totalSeconds;
+					while(waitTimeMilliseconds > 59000)
+					{
+						waitTimeMilliseconds = waitTimeMilliseconds - 59000;
+						sleep(59000);
+						
+					}
+					sleep(waitTimeMilliseconds);
 				}
 				else
 				{

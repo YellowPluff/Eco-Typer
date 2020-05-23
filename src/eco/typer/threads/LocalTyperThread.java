@@ -241,7 +241,12 @@ public class LocalTyperThread implements Runnable
 					sleep(timeToSleep);
 				} else
 				{
-					sleep(this.TEXT_DELAY_BETWEEN_LINES);
+					int temp_text_delay_between_lines = this.TEXT_DELAY_BETWEEN_LINES;
+					while(temp_text_delay_between_lines > 59000) {
+						temp_text_delay_between_lines = temp_text_delay_between_lines - 59000;
+						sleep(59000);
+					}
+					sleep(temp_text_delay_between_lines);
 				}
 			}
 			if(this.breakTyperThread) //Prevents this thread from multiplying
@@ -701,16 +706,21 @@ public class LocalTyperThread implements Runnable
 			this.TEXT_DELAY_BETWEEN_LINES = 7000;
 			break;
 		default:
-			String timeDelay = this.lineBreakTime.replace(" Second(s)", "");
-			//Deals with 
+			String timeDelay = this.lineBreakTime;
 			if(timeDelay.contains("-"))
 			{
+				timeDelay = this.lineBreakTime.replace(" Second(s)", "");
+				System.out.println("Random Delay Time");
 				this.TEXT_DELAY_BETWEEN_LINES = -1;
 				this.TEXT_DELAY_BETWEEN_LINES_RANDOM_MIN = 1000 * Integer.parseInt(timeDelay.substring(0, 2));
 				this.TEXT_DELAY_BETWEEN_LINES_RANDOM_MAX = 1000 * Integer.parseInt(timeDelay.substring(timeDelay.length() - 2, timeDelay.length()));
 			} else
 			{
-				this.TEXT_DELAY_BETWEEN_LINES = 1000 * Integer.parseInt(timeDelay);
+				timeDelay = this.lineBreakTime.replace(" Minute(s)", "").replace(" Second(s)", "");
+				int minutesPart = Integer.parseInt(timeDelay.substring(0, 2));
+				int secondsPart = Integer.parseInt(timeDelay.substring(timeDelay.length() - 2, timeDelay.length()));
+				int totalSeconds = (60 * minutesPart) + secondsPart;
+				this.TEXT_DELAY_BETWEEN_LINES = 1000 * totalSeconds;
 			}
 			break;
 
