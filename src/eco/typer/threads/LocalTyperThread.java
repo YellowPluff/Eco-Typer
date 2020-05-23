@@ -702,6 +702,7 @@ public class LocalTyperThread implements Runnable
 			break;
 		default:
 			String timeDelay = this.lineBreakTime.replace(" Second(s)", "");
+			//Deals with 
 			if(timeDelay.contains("-"))
 			{
 				this.TEXT_DELAY_BETWEEN_LINES = -1;

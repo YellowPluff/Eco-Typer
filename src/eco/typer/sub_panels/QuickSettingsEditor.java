@@ -72,7 +72,7 @@ public class QuickSettingsEditor extends CPanel
 	
 	public QuickSettingsEditor()
 	{
-		super("Quick Settings");
+		super("Profile Settings");
 		
 		SaveButton();
 		CurrentSettings();
