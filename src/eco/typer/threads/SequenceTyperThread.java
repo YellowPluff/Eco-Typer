@@ -319,10 +319,9 @@ public class SequenceTyperThread implements Runnable
 				case "Windows":
 					switch(Constants.sequenceTyper.finalCommand)
 					{
-					case "Final Command":
-					case "Do Nothing":
+					case "When Done:  Do Nothing":
 						break;
-					case "Close Eco Typer":
+					case "When Done:  Close Eco Typer":
 						System.exit(0);
 						break;
 //					case "Close Selected Game Client":
@@ -334,7 +333,7 @@ public class SequenceTyperThread implements Runnable
 //							CloseSelectedGameClient();
 //						System.exit(0);
 //						break;
-					case "Logoff Computer":
+					case "When Done:  Logoff Computer":
 						try
 						{
 							Process proc = Runtime.getRuntime().exec("shutdown -l -t 0");
@@ -346,7 +345,7 @@ public class SequenceTyperThread implements Runnable
 							System.exit(0);
 						}
 						break;
-					case "Restart Computer":
+					case "When Done:  Restart Computer":
 						try
 						{
 							Process proc = Runtime.getRuntime().exec("shutdown -r -t 0");
@@ -358,7 +357,7 @@ public class SequenceTyperThread implements Runnable
 							System.exit(0);
 						}
 						break;
-					case "Shutdown Computer":
+					case "When Done:  Shutdown Computer":
 						try
 						{
 							Process proc = Runtime.getRuntime().exec("shutdown -s -t 0");
@@ -376,10 +375,9 @@ public class SequenceTyperThread implements Runnable
 				case "Linux":
 					switch(Constants.sequenceTyper.finalCommand)
 					{
-					case "Final Command":
-					case "Do Nothing":
+					case "When Done:  Do Nothing":
 						break;
-					case "Close Eco Typer":
+					case "When Done:  Close Eco Typer":
 						System.exit(0);
 						break;
 //					case "Close Selected Game Client":
