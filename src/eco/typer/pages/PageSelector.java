@@ -40,7 +40,7 @@ public class PageSelector extends CPanel
 	
 	public PageSelector()
 	{
-		super("Page Editor");
+		super("Text Template Editor");
 		
 		PageFileList();
 		MakeNewPage();
@@ -71,9 +71,9 @@ public class PageSelector extends CPanel
 
 	private void MakeNewPage()
 	{
-		CButton makeNewPage = new CButton("Make New Page");
-		makeNewPage.setBounds(230, 50, 190, 20);
-		makeNewPage.addMouseListener(new SUL("Allows you to make a custom page for later use."));
+		CButton makeNewPage = new CButton("Make New Template");
+		makeNewPage.setBounds(230, 50, 250, 20);
+		makeNewPage.addMouseListener(new SUL("Allows you to make a custom template for later use."));
 		makeNewPage.addActionListener(e ->
 		{
 			CustomFrame.updateDisplay(new PageMaker());
@@ -83,9 +83,9 @@ public class PageSelector extends CPanel
 	
 	private void EditSelectedPage()
 	{
-		CButton editSelPage = new CButton("Edit Selected Page");
-		editSelPage.setBounds(230, 80, 190, 20);
-		editSelPage.addMouseListener(new SUL("Allows you to edit the currently selected page."));
+		CButton editSelPage = new CButton("Edit Selected Template");
+		editSelPage.setBounds(230, 80, 250, 20);
+		editSelPage.addMouseListener(new SUL("Allows you to edit the currently selected template."));
 		editSelPage.addActionListener(e ->
 		{
 			if(fileList.getSelectedValue() == null)
@@ -102,9 +102,9 @@ public class PageSelector extends CPanel
 	
 	private void DeleteSelectedPage()
 	{
-		CButton deleteSelPage = new CButton("Delete Selected Page");
-		deleteSelPage.setBounds(230, 110, 190, 20);
-		deleteSelPage.addMouseListener(new SUL("Allows you to remove the currently selected page."));
+		CButton deleteSelPage = new CButton("Delete Selected Template");
+		deleteSelPage.setBounds(230, 110, 250, 20);
+		deleteSelPage.addMouseListener(new SUL("Allows you to remove the currently selected template."));
 		deleteSelPage.addActionListener(e ->
 		{
 			if(fileList.getSelectedValue() == null)
@@ -113,7 +113,7 @@ public class PageSelector extends CPanel
 			}
 			else
 			{
-				int result = JOptionPane.showConfirmDialog(Settings.frame, "You're about to delete a page, do you want to continue?", "Page Deletion", JOptionPane.YES_NO_CANCEL_OPTION);
+				int result = JOptionPane.showConfirmDialog(Settings.frame, "You're about to delete a template, do you want to continue?", "Template Deletion", JOptionPane.YES_NO_CANCEL_OPTION);
 				if(result == 0)
 				{
 					File fileName = new File(Constants.HOST_FILES_DIRECTORY + "/" + fileList.getSelectedValue() + ".epg");
@@ -127,10 +127,10 @@ public class PageSelector extends CPanel
 	
 	private void InfoIcon()
 	{
-		IconLabel infoIcon = new IconLabel("\uf05a", "", "FontAwesome.ttf", 30);
-		infoIcon.setBounds(CustomFrame.WORKPANEL_WIDTH - 30, CustomFrame.WORKPANEL_HEIGHT - 30, 50, 50);
-		infoIcon.addMouseListener(new SUL("Find out how to use the Page System."));
-		add(infoIcon);
+//		IconLabel infoIcon = new IconLabel("\uf05a", "", "FontAwesome.ttf", 30);
+//		infoIcon.setBounds(CustomFrame.WORKPANEL_WIDTH - 30, CustomFrame.WORKPANEL_HEIGHT - 30, 50, 50);
+//		infoIcon.addMouseListener(new SUL("Find out how to use the Template System."));
+//		add(infoIcon);
 	}
 
 }

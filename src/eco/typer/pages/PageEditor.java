@@ -39,7 +39,7 @@ public class PageEditor extends CPanel
 	
 	public PageEditor(String pageName)
 	{
-		super("Page Editor - " + pageName);
+		super("Template Editor - " + pageName);
 		this.pageFile = new File(Constants.HOST_FILES_DIRECTORY + "/" + pageName + ".epg");
 		values = readInFile();
 		
@@ -145,7 +145,7 @@ public class PageEditor extends CPanel
 	private void SavePageButton()
 	{
 		CButton savePageButton = new CButton("Save Changes");
-		savePageButton.addMouseListener(new SUL("Save the changes to this page."));
+		savePageButton.addMouseListener(new SUL("Save the changes to this template."));
 		savePageButton.setBounds(410, CustomFrame.WORKPANEL_HEIGHT - 30, 190, 20);
 		savePageButton.addActionListener(e ->
 		{

@@ -38,7 +38,7 @@ public class PageMaker extends CPanel
 	
 	public PageMaker()
 	{
-		super("New Page");
+		super("New Template");
 		
 		int c = 110;
 		for(int i = 0; i < 6; i++)
@@ -60,12 +60,12 @@ public class PageMaker extends CPanel
 
 	private void MakePageButton()
 	{
-		CButton makePageButton = new CButton("Make Page");
-		makePageButton.addMouseListener(new SUL("Make a new page."));
+		CButton makePageButton = new CButton("Make Template");
+		makePageButton.addMouseListener(new SUL("Make a new template."));
 		makePageButton.setBounds(410, CustomFrame.WORKPANEL_HEIGHT - 30, 190, 20);
 		makePageButton.addActionListener(e ->
 		{
-			String fileName = JOptionPane.showInputDialog(Settings.frame, "What would you like to name this page?");
+			String fileName = JOptionPane.showInputDialog(Settings.frame, "What would you like to name this template?");
 			if(fileName != null && !fileName.equals("") && !replacementInputField.getText().equals(""))
 			{
 				File file = new File(Constants.HOST_FILES_DIRECTORY + "/" + fileName + ".epg");

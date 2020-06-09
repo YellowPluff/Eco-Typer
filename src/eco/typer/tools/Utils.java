@@ -172,9 +172,9 @@ public class Utils
 			Constants.SAVED_SEQUENCE_FILES.add("---Save/Delete Files---");
 			Constants.SAVED_SEQUENCE_FILES.add("---Clear Text Box---");
 		}
-		if(!Constants.TEXT_PAGES.contains("---Edit Pages---"))
+		if(!Constants.TEXT_PAGES.contains("---Edit Templates---"))
 		{
-			Constants.TEXT_PAGES.add("---Edit Pages---");
+			Constants.TEXT_PAGES.add("---Edit Templates---");
 		}
 		
 		File[] files = Constants.HOST_FILES_DIRECTORY.listFiles();

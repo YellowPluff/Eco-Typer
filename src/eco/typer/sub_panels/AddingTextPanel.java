@@ -93,8 +93,8 @@ public class AddingTextPanel extends CPanel
 
 	private void PageSelector()
 	{
-		pageSelector = new CComboBox("Page Select", Constants.TEXT_PAGES);
-		pageSelector.addMouseListener(new SUL("Use this to quickly change pages."));
+		pageSelector = new CComboBox("Text Template", Constants.TEXT_PAGES);
+		pageSelector.addMouseListener(new SUL("Use this to quickly change templates."));
 		pageSelector.setBounds(CustomFrame.WORKPANEL_WIDTH - 200, 50, 190, 30);
 		pageSelector.addActionListener(e -> {
 			switch(pageSelector.getSelectedIndex())
