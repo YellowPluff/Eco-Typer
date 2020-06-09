@@ -266,7 +266,7 @@ public class SettingsDisplay extends CPanel
 		alarmSelect.setVisible(false);	//This gets toggled
 		add(alarmSelect);
 		
-		finishCommand = new CComboBox("Final Command", Constants.FINISHING_COMMAND_OPTIONS);
+		finishCommand = new CComboBox("When Done:  Do Nothing", Constants.FINISHING_COMMAND_OPTIONS);
 		finishCommand.addMouseListener(new SUL("What do you want to happen when the timer finishes?"));
 		finishCommand.setBounds(210, 130, 390, 30);
 		add(finishCommand);

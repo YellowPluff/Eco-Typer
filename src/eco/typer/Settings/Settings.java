@@ -298,12 +298,12 @@ public class Settings
 		if(Constants.OPERATING_SYSTEM.equals("Windows")) //This works because Utils.getOperatingSystem(); returns "Windows"
 		{
 			//Constants.FINISHING_COMMAND_OPTIONS = new String[] {"Do Nothing", "Close Eco Typer", "Close Selected Game Client", "Close Selected Game Client and Eco", "Logoff Computer", "Restart Computer", "Shutdown Computer"};
-			Constants.FINISHING_COMMAND_OPTIONS = new String[] {"Do Nothing", "Close Eco Typer", "Logoff Computer", "Restart Computer", "Shutdown Computer"};
+			Constants.FINISHING_COMMAND_OPTIONS = new String[] {"When Done:  Do Nothing", "When Done:  Close Eco Typer", "When Done:  Logoff Computer", "When Done:  Restart Computer", "When Done:  Shutdown Computer"};
 		}
 		else
 		{
 			//Constants.FINISHING_COMMAND_OPTIONS = new String[] {"Do Nothing", "Close Eco Typer", "Close Selected Game Client", "Close Selected Game Client and Eco"};
-			Constants.FINISHING_COMMAND_OPTIONS = new String[] {"Do Nothing", "Close Eco Typer"};
+			Constants.FINISHING_COMMAND_OPTIONS = new String[] {"When Done:  Do Nothing", "When Done:  Close Eco Typer"};
 		}
 		//Constants.ALERT_MESSAGE = webReader.getAlert();
 		Constants.ALERT_MESSAGE = "Hello everyone,\n\nFirstly, I would like to thank everyone who has supported this project over the last four years. However, my time with it is coming to an end. Eco Typer started as a small project aimed at adding a timer to Garys Hood Auto Typer, and a hobby, but has outgrown me. Throughout development of Eco Typer I have learned a lot and had a lot of fun doing so. Tons of time and excitement went into working on it, and as a developer I will always cherish this work. Still, it is time to let it go. It will always hold a special place in my heart as my first big project. I'm glad that my work was able to help those who used it and it's been an honor working with those who gave me feedback on how to improve it. Thank you everyone for your support. With that, this is goodbye to Eco Typer.\n\nThank you,\nDakota\n\n\r\n" + 
